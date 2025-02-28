@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meal Planner & Recipes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            padding: 20px;
+        }
+
+        h1, h2 {
+            text-align: center;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        .meal-plan, .recipe-form {
+            margin-bottom: 30px;
+        }
+
+        .meal-plan table, .recipe-form table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .meal-plan th, .meal-plan td, .recipe-form th, .recipe-form td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .meal-plan th, .recipe-form th {
+            background-color: #f2f2f2;
+        }
+
+        .button {
+            padding: 10px 20px;
+            font-size: 14px;
+            margin-top: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .button:hover {
+            background-color: #45a049;
+        }
+
+        .recipe-form input, .recipe-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            font-size: 14px;
+        }
+
+        .recipe-form input[type="text"], .recipe-form input[type="date"] {
+            width: 100%;
+        }
+
+        .recipe-form textarea {
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Meal Planner & Recipes</h1>
+    <div class="container">
+        <!-- Meal Planning Section -->
+        <div class="meal-plan">
+            <h2>Meal Plan for the Week</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Day</th>
+                        <th>Meal</th>
+                        <th>Recipe</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Monday</td>
+                        <td>Breakfast</td>
+                        <td><button class="button" onclick="viewRecipe('Monday', 'Breakfast')">View Recipe</button></td>
+                    </tr>
+                    <tr>
+                        <td>Monday</td>
+                        <td>Lunch</td>
+                        <td><button class="button" onclick="viewRecipe('Monday', 'Lunch')">View Recipe</button></td>
+                    </tr>
+                    <tr>
+                        <td>Monday</td>
+                        <td>Dinner</td>
+                        <td><button class="button" onclick="viewRecipe('Monday', 'Dinner')">View Recipe</button></td>
+                    </tr>
+                    <!-- Add more rows for other days and meals -->
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Recipe Form Section -->
+        <div class="recipe-form">
+            <h2>Add New Recipe</h2>
+            <form id="recipeForm">
+                <table>
+                    <tr>
+                        <th>Recipe Name</th>
+                        <td><input type="text" id="recipeName" placeholder="Enter recipe name" required></td>
+                    </tr>
+                    <tr>
+                        <th>Meal Type</th>
+                        <td>
+                            <select id="mealType" required>
+                                <option value="Breakfast">Breakfast</option>
+                                <option value="Lunch">Lunch</option>
+                                <option value="Dinner">Dinner</option>
+                                <option value="Snack">Snack</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Ingredients</th>
+                        <td><textarea id="ingredients" placeholder="List the ingredients" required></textarea></td>
+                    </tr>
+                    <tr>
+                        <th>Instructions</th>
+                        <td><textarea id="instructions" placeholder="Enter the recipe instructions" required></textarea></td>
+                    </tr>
+                    <tr>
+                        <th>Date</th>
+                        <td><input type="date" id="recipeDate" required></td>
+                    </tr>
+                </table>
+                <button type="button" class="button" onclick="addRecipe()">Add Recipe</button>
+            </form>
+        </div>
+
+        <!-- Recipe List -->
+        <div class="recipe-list">
+            <h2>Saved Recipes</h2>
+            <ul id="recipeList">
+                <!-- List of saved recipes will appear here -->
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        // Function to view the recipe for a specific meal (example)
+        function viewRecipe(day, meal) {
+            alert("Viewing recipe for " + meal + " on " + day);
+            // Implement recipe viewing functionality here (e.g., open a modal with recipe details)
+        }
+
+        // Function to add a new recipe
+        function addRecipe() {
+            const recipeName = document.getElementById("recipeName").value;
+            const mealType = document.getElementById("mealType").value;
+            const ingredients = document.getElementById("ingredients").value;
+            const instructions = document.getElementById("instructions").value;
+            const recipeDate = document.getElementById("recipeDate").value;
+
+            if (!recipeName || !ingredients || !instructions || !recipeDate) {
+                alert("Please fill in all fields.");
+                return;
+            }
+
+            const recipeList = document.getElementById("recipeList");
+            const listItem = document.createElement("li");
+            listItem.innerHTML = `
+                <strong>${recipeName}</strong> (Meal: ${mealType}, Date: ${recipeDate})<br>
+                Ingredients: ${ingredients}<br>
+                Instructions: ${instructions}<br>
+                <button class="button" onclick="viewRecipe('${recipeDate}', '${mealType}')">View Recipe</button>
+            `;
+            recipeList.appendChild(listItem);
+
+            // Clear the form fields
+            document.getElementById("recipeForm").reset();
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nutrition Planner</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            color: #333;
+            animation: fadeIn 1s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        header {
+            background: #4CAF50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 24px;
+            font-weight: 600;
+        }
+
+        .navbar ul {
+            list-style: none;
+            padding: 0;
+            text-align: center;
+        }
+
+        .navbar ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .navbar a:hover {
+            color: #d4edda;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            background: #28a745;
+            color: white;
+            padding: 12px 24px;
+            font-size: 18px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .cta-btn:hover {
+            transform: scale(1.1);
+            background: #218838;
+        }
+
+        section {
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        h2 {
+            font-size: 28px;
+            font-weight: 600;
+            color: #343a40;
+            margin-bottom: 20px;
+        }
+
+        .feature-list, .plans {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .feature, .plan {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+            width: 280px;
+        }
+
+        .feature:hover, .plan:hover {
+            transform: translateY(-10px);
+        }
+
+        button {
+            background: #007bff;
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background 0.3s ease-in-out;
+        }
+
+        button:hover {
+            background: #0056b3;
+        }
+
+        footer {
+            background: #343a40;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <h1>Nutrition Planner</h1>
+            <nav>
+                <ul>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#plans">Plans</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#profile">Profile</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="intro">
+        <h2>Welcome to Nutrition Planner</h2>
+        <p>Your personal guide to a healthier lifestyle. Track your meals, plan your nutrition, and achieve your health goals.</p>
+        <a href="ewyfhwyfg.html" class="cta-btn">Get Started</a>
+    </section>
+
+    <section id="features">
+        <h2>Features</h2>
+        <div class="feature-list">
+            <div class="feature">
+                <h3>Meal Tracking</h3>
+                <p>Keep track of what you eat and stay on top of your nutrition goals.</p>
+            </div>
+            <div class="feature">
+                <h3>Personalized Plans</h3>
+                <p>Get customized nutrition plans tailored to your dietary preferences and goals.</p>
+            </div>
+            <div class="feature">
+                <h3>Progress Monitoring</h3>
+                <p>Track your progress over time and make adjustments as needed.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="plans">
+        <h2>Choose Your Plan</h2>
+        <div class="plans">
+            <div class="plan">
+                <h3>Basic Plan</h3>
+                <p>Track your meals and get basic insights.</p>
+                <button>Sign Up</button>
+            </div>
+            <div class="plan">
+                <h3>Premium Plan</h3>
+                <p>Access advanced features like personalized plans and progress tracking.</p>
+                <button>Sign Up</button>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <p>&copy; 2025 Nutrition Planner. All rights reserved.</p>
+        <p><a href="mailto:contact@nutritionplanner.com">Contact Us</a></p>
+    </footer>
+</body>
+</html>
